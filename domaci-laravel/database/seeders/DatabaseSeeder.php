@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Lekar;
+use App\Models\Pacijent;
+use App\Models\Pregled;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +22,23 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        //seed data
+        //seedujemo podatke u bazu
+
+        Pacijent::truncate();
+        Lekar::truncate();
+        Pregled::truncate();
+
+        Pacijent::factory()
+            ->count(20)
+            ->create();
+
+        Lekar::factory()
+            ->count(20)
+            ->create();
+
+        Pregled::factory()
+            ->count(20)
+            ->create();
+
     }
 }
